@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+
+        /* display: flex; */
+        /* justify-content: center;
+        align-items: center; */
+        height: 100vh;
+        background-color: #f4f4f4;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      li strong {
+        font-weight: bold;
+        margin-right: 5px;
+      }
+
+      button {
+        padding: 5px 10px;
+        border: none;
+        background-color: #3498db;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+
+      button:hover {
+        background-color: #2980b9;
+      }
+
+      a {
+        text-decoration: none;
+        margin-right: 10px;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <title>User Details</title>
+  </head>
+  <body>
+    <!-- Assuming 'allUsers' is an array of user objects passed from the server -->
+
+    <h1>User Details</h1>
+    <ul>
+      <ul>
+        <% for (let i = 0; i < allUsers.length; i++) { %>
+        <li><strong>FirstName : </strong><%= allUsers[i].firstName %></li>
+        <li><strong>LastName : </strong> <%= allUsers[i].lastName %></li>
+        <li><strong>Email </strong><%= allUsers[i].email %></li>
+        <form method="post" action="/deleteUser/<%= allUsers[i]._id %>">
+          <button type="submit">Delete</button>
+        </form>
+        <% } %>
+      </ul>
+    </ul>
+  </body>
+</html>

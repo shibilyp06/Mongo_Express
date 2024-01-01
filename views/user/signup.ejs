@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     body {
+            font-family: Arial, sans-serif;
+            background-color: #F0F2F5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .signup-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        h2 {
+            color: #12cd50;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #446c50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .already{
+            width: 40px;
+            background-color: white;
+        }
+        span{
+            font-size: smaller;
+            color: red;
+        }
+</style>
+<body>
+    <div class="signup-container">
+        <h2>Create a New Account</h2>
+        <form action="/signupAction" method="post" onsubmit="return checkPass()">
+            <input name="FirstName" type="text" placeholder="First Name" required>
+            <input name="LastName" type="text" placeholder="Last Name" required>
+            <input name="Email" type="email" placeholder="Email" onblur="checkgmail()" required>
+            <input id="password" name="password" type="password" placeholder="Password" onsubmit="checkPass()" required>
+            <input id="repass" name="reEnterpassword" type="password" placeholder="Reenter Password" onblur="checkPass()" required>
+
+            <span id="span"> <%= error %></span>
+            <br>
+            <button class="signup" type="submit">Sign Up</button>
+            
+            <p>Already have an account? <button class="already"><a href="/login">LOGIN</a></button></p>
+
+        </form>
+        <!-- <script>
+          function checkPass(){  
+             const password = document.getElementById("password").value;
+             const rePss = document.getElementById("repass").value;
+             
+             const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+             const passwordValidation = passwordRegex.test(password);
+             if(passwordValidation){
+                
+             }
+             else{
+                  document.getElementById("span").innerText = "Password nat valid"
+             }
+
+          }        
+    
+          
+          
+
+        </script> -->
+</body>
+</html>
+
+
+
+
+
+
