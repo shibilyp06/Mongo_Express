@@ -24,7 +24,7 @@ let object = {
   addProductPost: async (req, res) => {
     const { productName, description, price } = req.body;
     const image = req.file
-      ? `/uploads/ ${req.file.filename} `
+      ? `/uploads/${req.file.filename} `
       : "/defult-image.jpg";
     const newProduct = new productUserModel({
       productName: productName,

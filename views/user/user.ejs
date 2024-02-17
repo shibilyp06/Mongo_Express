@@ -78,7 +78,9 @@
   <body>
     <div class="products-container">
       <% allProducts.forEach((item) => { %>
+      
       <div class="product-card">
+        <img src="<%= item.image %>" alt="<%= item.productName %>" style="width: 100%; border-radius: 8px;">
         <div class="product-details">
           <strong>Product Name:</strong>
           <%= item.productName %>
@@ -91,7 +93,7 @@
           <strong>Price:</strong>
           <%= item.price %>
         </div>
-          <!-- <input type="file" class="upload-button" accept="image/*" /> -->
+         
         </div>
         <% }); %>
         <a href="/addProfile"><button>Add Profile</button></a>
